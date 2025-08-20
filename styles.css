@@ -1,0 +1,142 @@
+/* Base styles */
+:root{
+  --yellow: #E5AF42;
+  --blue: #4278e5;
+  --text: #222;
+  --bg: #fffaf2;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  height: 100%;
+}
+
+body{
+  font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  margin: 0;
+}
+
+header, footer{
+  background: var(--yellow);
+  color: #111;
+  padding: 16px 20px;
+}
+
+main{
+  max-width: 950px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+/* Generic utilities */
+.flex{
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.large-text{ font-size: 1.25rem; }
+
+.fake-button,
+.small-button{
+  display: inline-block;
+  background: var(--yellow);
+  padding: 10px 16px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.05s ease;
+}
+
+.small-button{
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+}
+
+.fake-button:active,
+.small-button:active{ transform: translateY(1px); }
+
+.blue-hover:hover{ background: var(--blue); color: #fff; }
+
+/* Index page */
+.index main{
+  min-height: 300px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+/* Booking page */
+.booking-page .day-selector{
+  list-style: none;
+  display: flex;
+  gap: 12px;
+  padding: 0;
+  margin: 0;
+}
+
+.booking-page .day-selector li{
+  display: inline-block;
+  padding: 10px 14px;
+  border-radius: 12px;
+  background: #f0f0f0;
+  cursor: pointer;
+  border: 2px solid transparent;
+}
+
+.booking-page .day-selector li.clicked{
+  background: var(--yellow);
+  border-color: #b88419;
+}
+
+.booking-page .small-button.clicked{
+  outline: 3px solid #b88419;
+}
+
+.top-margin{ margin-top: 18px; }
+
+/* Contact page */
+.contact main{
+  min-height: 420px;
+  display: grid;
+  place-items: center;
+}
+
+.contact form{
+  display: grid;
+  grid-template-columns: 150px min(60ch, 60vw);
+  gap: 12px 18px;
+  align-items: start;
+}
+
+.contact form label{
+  justify-self: end;
+  padding-top: 6px;
+}
+
+.contact textarea{
+  height: 150px;
+  resize: vertical;
+}
+
+.contact input,
+.contact textarea,
+.contact button,
+.contact .fake-button{
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.contact #submit-button{
+  grid-column: 2 / 3; /* align edges with textarea */
+}
+
+#confirmation-message{ font-weight: 600; }
